@@ -9,29 +9,39 @@
             width: 50px;
         }
     </style>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
-<body>
-    <h2>Calculadora</h2>
-    <form name="calculator">
-        <input type="text" name="display" id="display" readonly>
-        <br>
-        <input type="button" value="7" onclick="appendNumber('7')">
-        <input type="button" value="8" onclick="appendNumber('8')">
-        <input type="button" value="9" onclick="appendNumber('9')">
-        <input type="button" value="/" onclick="appendOperator('/')">
-        <br>
-        <input type="button" value="4" onclick="appendNumber('4')">
-        <input type="button" value="5" onclick="appendNumber('5')">
-        <input type="button" value="6" onclick="appendNumber('6')">
-        <input type="button" value="-" onclick="appendOperator('-')">
-        <br>
-        <input type="button" value="1" onclick="appendNumber('1')">
-        <input type="button" value="2" onclick="appendNumber('2')">
-        <input type="button" value="3" onclick="appendNumber('3')">
-        <input type="button" value="+" onclick="appendOperator('+')">
-        <br>
-        <input type="button" value="0" onclick="appendNumber('0')">
-        <input type="button" value="." onclick="appendDecimal()">
-        <input type="button" value="C" onclick="clearDisplay()">
-        <input type="button" value="=" onclick="calculate()">
-    </form>
+<body class="d-flex justify-content-center align-items-center h-100 d-inline-block">
+    <div class="flex-column border text-center align-content-center flex-wrap mt-5 shadow-lg p-4 mb-4 bg-white">
+        <h2>Calculadora</h2>
+        <input type="number" name="display" id="display" >
+        <div class="flex">
+            <input type="button" class="btn btn-outline-secondary" value="7" onclick="appendNumber('7')">
+            <input type="button" class="btn btn-outline-secondary" value="8" onclick="appendNumber('8')">
+            <input type="button" class="btn btn-outline-secondary" value="9" onclick="appendNumber('9')">
+            <input type="button" class="btn btn-outline-secondary" value="/" onclick="appendOperator('/')">
+        </div>
+        <div class="flex">
+            <input type="button" class="btn btn-outline-secondary" value="4" onclick="appendNumber('4')">
+            <input type="button" class="btn btn-outline-secondary" value="5" onclick="appendNumber('5')">
+            <input type="button" class="btn btn-outline-secondary" value="6" onclick="appendNumber('6')">
+            <input type="button" class="btn btn-outline-secondary" value="-" onclick="appendOperator('-')">
+        </div>
+        <div class="flex">
+            <input type="button" class="btn btn-outline-secondary" value="1" onclick="appendNumber('1')">
+            <input type="button" class="btn btn-outline-secondary" value="2" onclick="appendNumber('2')">
+            <input type="button" class="btn btn-outline-secondary" value="3" onclick="appendNumber('3')">
+            <input type="button" class="btn btn-outline-secondary" value="+" onclick="appendOperator('+')">
+        </div>
+        <div class="flex">
+            <input type="button" class="btn btn-outline-secondary" value="0" onclick="appendNumber('0')">
+            <input type="button" class="btn btn-outline-secondary" value="." onclick="appendDecimal()">
+            <input type="button" class="btn btn-outline-secondary" value="C" onclick="clearDisplay()">
+            <input type="button" class="btn btn-outline-secondary" value="=" onclick="calculate()">
+        </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
