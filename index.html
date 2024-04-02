@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,33 +49,33 @@
         }
     </style>
 </head>
-<body class="d-flex justify-content-center align-items-center h-100 d-inline-block">
+<body class="d-flex justify-content-center align-items-center h-100 d-inline-block bg-dark " >
     <div class="flex-column border text-center align-content-center flex-wrap mt-5 shadow-lg p-4 mb-4 bg-white">
         <h2>Calculadora</h2>
         <input type="number" name="display" id="display" >
         <div class="flex">
-            <input type="button" class="btn btn-outline-secondary" value="7" onclick="btNumero(event)">
-            <input type="button" class="btn btn-outline-secondary" value="8" onclick="btNumero(event)">
-            <input type="button" class="btn btn-outline-secondary" value="9" onclick="btNumero(event)">
-            <input type="button" class="btn btn-outline-secondary" value="/" onclick="btOperacao(event)">
+            <input type="button" class="btn btn-outline-secondary btn-lg " value="7" onclick="btNumero(event)">
+            <input type="button" class="btn btn-outline-secondary m-1 btn-lg" value="8" onclick="btNumero(event)">
+            <input type="button" class="btn btn-outline-secondary btn-lg " value="9" onclick="btNumero(event)">
+            <input type="button" class="btn btn-secondary btn-lg " value="/" onclick="btOperacao(event)">
         </div>
         <div class="flex">
-            <input type="button" class="btn btn-outline-secondary" value="4" onclick="btNumero(event)">
-            <input type="button" class="btn btn-outline-secondary" value="5" onclick="btNumero(event)">
-            <input type="button" class="btn btn-outline-secondary" value="6" onclick="btNumero(event)">
-            <input type="button" class="btn btn-outline-secondary" value="-" onclick="btOperacao(event)">
+            <input type="button" class="btn btn-outline-secondary btn-lg " value="4" onclick="btNumero(event)">
+            <input type="button" class="btn btn-outline-secondary m-1 btn-lg" value="5" onclick="btNumero(event)">
+            <input type="button" class="btn btn-outline-secondary btn-lg " value="6" onclick="btNumero(event)">
+            <input type="button" class="btn btn-secondary btn-lg" value="-" onclick="btOperacao(event)">
         </div>
         <div class="flex">
-            <input type="button" class="btn btn-outline-secondary" value="1" onclick="btNumero(event)">
-            <input type="button" class="btn btn-outline-secondary" value="2" onclick="btNumero(event)">
-            <input type="button" class="btn btn-outline-secondary" value="3" onclick="btNumero(event)">
-            <input type="button" class="btn btn-outline-secondary" value="+" onclick="btOperacao(event)">
+            <input type="button" class="btn btn-outline-secondary btn-lg " value="1" onclick="btNumero(event)">
+            <input type="button" class="btn btn-outline-secondary m-1 btn-lg" value="2" onclick="btNumero(event)">
+            <input type="button" class="btn btn-outline-secondary  btn-lg" value="3" onclick="btNumero(event)">
+            <input type="button" class="btn btn-secondary  btn-lg" value="+" onclick="btOperacao(event)">
         </div>
         <div class="flex">
-            <input type="button" class="btn btn-outline-secondary" value="0" onclick="btNumero(event)">
-            <input type="button" class="btn btn-outline-secondary" value="." onclick="appendDecimal()">
-            <input type="button" class="btn btn-outline-secondary" value="C" onclick="clearDisplay()">
-            <input type="button" class="btn btn-outline-secondary" value="=" onclick="igual()">
+            <input type="button" class="btn btn-outline-secondary btn-lg " value="0" onclick="btNumero(event)">
+            <input type="button" class="btn btn-outline-secondary m-1 btn-lg" value="." onclick="appendDecimal()">
+            <input type="button" class="btn btn-danger btn-lg" value="C" onclick="clearDisplay()">
+            <input type="button" class="btn btn-secondary btn-lg" value="=" onclick="igual()">
         </div>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         
