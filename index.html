@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,41 +7,87 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script type="text/babel">
-        let operacoes: any[] = ["-", "+", "/"]
+        let operacoes: any[] = ["-", "+", "/", "*"]
         let calculo = ""
-        function main(){
-           
-        }
+        let novoCalculoAux = 0;
+        let novoCalculo = 0;
+        
         function btNumero(event: Event): void{
-            console.log(event.target.value)
-            calculo += event.target.value;
+            //if(){
+                //iniciado novo calculo
+                let valor = event.target.value
+                console.log(valor)
+                document.getElementById("display").value = valor;
+                calculo += valor;
+            //}
+            /* let valor = event.target.value;
+            console.log(valor)
+            let display = document.getElementById("display");
+            if(display.value.includes(".")){
+                //iniciado novo calculo
+                calculo += valor;
+            }else{
+                calculo += valor;
+            }
+            display.value = valor; */
         }
         function btOperacao(event: Event): void{
             console.log(event.target.value)
             calculo += event.target.value;
         }
         function igual(): void{
+            let resultado: number = 0;
             if(calculo.includes("+")){
                 let calculoAux = calculo.split("+")
-                let a = Number(calculoAux[0])
-                let b = Number(calculoAux[1])
-                soma(a, b)
+                let a = Number.parseFloat(calculoAux[0])
+                let b = Number.parseFloat(calculoAux[1])
+                resultado = soma(a, b)
             }else if(calculo.includes("-")){
                 let calculoAux = calculo.split("-")
-                let a = calculoAux[0]
-                let b = calculoAux[1]
-                subtracao(a, b)
-            }else{
+                let a = Number.parseFloat(calculoAux[0])
+                let b = Number.parseFloat(calculoAux[1])
+                resultado = subtracao(a, b)
+            }else if(calculo.includes("/")){
                 let calculoAux = calculo.split("/")
-                let a = calculoAux[0]
-                let b = calculoAux[1]
-                divisao(a, b)
+                let a = Number.parseFloat(calculoAux[0])
+                let b = Number.parseFloat(calculoAux[1])
+                resultado = divisao(a, b)
+            }else if(calculo.includes("*")){
+                let calculoAux = calculo.split("*")
+                let a = Number.parseFloat(calculoAux[0])
+                let b = Number.parseFloat(calculoAux[1])
+                resultado = multiplicao(a, b)
             }
+            console.log(resultado)
+            //plota resultado
+            document.getElementById("display").value = resultado.toString();
+            calculo = "";
         }
-        function soma(a: number, b: number){
-            console.log(a + b)
+        function soma(a: number, b: number): number{
+            return a + b;
         }
-        main()
+        function subtracao(a: number, b: number): number{
+            return a - b;
+        }
+        function divisao(a: number, b: number): number{
+            if(b === 0){
+                return "Impossível."
+            }
+            return a / b;
+        }
+        function multiplicao(a: number, b: number): number{
+            return a * b;
+        }
+        function clearDisplay(): void{
+            document.getElementById("display").value = "";
+            calculo = "";
+        }
+        function setDecimal(event: Event){
+            let simbolo = event.target.value
+            document.getElementById("display").value += simbolo;
+            calculo += simbolo;
+        }
+        
     </script>
     <style>
         input {
@@ -49,34 +95,35 @@
         }
     </style>
 </head>
-<body class="d-flex justify-content-center align-items-center h-100 d-inline-block bg-dark " >
+<body class="d-flex justify-content-center align-items-center h-100 d-inline-block bg-dark" style="background-color: black;">
     <div class="flex-column border text-center align-content-center flex-wrap mt-5 shadow-lg p-4 mb-4 bg-white">
         <h2>Calculadora</h2>
-        <input type="number" name="display" id="display" >
+        <input type="text" name="display" id="display"  style="width: 100%">
         <div class="flex">
-            <input type="button" class="btn btn-outline-secondary btn-lg " value="7" onclick="btNumero(event)">
+            <input type="button" class="btn btn-outline-secondary btn-lg" value="7" onclick="btNumero(event)">
             <input type="button" class="btn btn-outline-secondary m-1 btn-lg" value="8" onclick="btNumero(event)">
-            <input type="button" class="btn btn-outline-secondary btn-lg " value="9" onclick="btNumero(event)">
-            <input type="button" class="btn btn-secondary btn-lg " value="/" onclick="btOperacao(event)">
+            <input type="button" class="btn btn-outline-secondary btn-lg" value="9" onclick="btNumero(event)">
+            <input type="button" class="btn btn-secondary btn-lg" value="/" onclick="btOperacao(event)">
         </div>
         <div class="flex">
-            <input type="button" class="btn btn-outline-secondary btn-lg " value="4" onclick="btNumero(event)">
+            <input type="button" class="btn btn-outline-secondary btn-lg" value="4" onclick="btNumero(event)">
             <input type="button" class="btn btn-outline-secondary m-1 btn-lg" value="5" onclick="btNumero(event)">
-            <input type="button" class="btn btn-outline-secondary btn-lg " value="6" onclick="btNumero(event)">
+            <input type="button" class="btn btn-outline-secondary btn-lg" value="6" onclick="btNumero(event)">
             <input type="button" class="btn btn-secondary btn-lg" value="-" onclick="btOperacao(event)">
         </div>
         <div class="flex">
-            <input type="button" class="btn btn-outline-secondary btn-lg " value="1" onclick="btNumero(event)">
+            <input type="button" class="btn btn-outline-secondary btn-lg" value="1" onclick="btNumero(event)">
             <input type="button" class="btn btn-outline-secondary m-1 btn-lg" value="2" onclick="btNumero(event)">
-            <input type="button" class="btn btn-outline-secondary  btn-lg" value="3" onclick="btNumero(event)">
-            <input type="button" class="btn btn-secondary  btn-lg" value="+" onclick="btOperacao(event)">
+            <input type="button" class="btn btn-outline-secondary btn-lg" value="3" onclick="btNumero(event)">
+            <input type="button" class="btn btn-secondary btn-lg" value="+" onclick="btOperacao(event)">
         </div>
         <div class="flex">
-            <input type="button" class="btn btn-outline-secondary btn-lg " value="0" onclick="btNumero(event)">
-            <input type="button" class="btn btn-outline-secondary m-1 btn-lg" value="." onclick="appendDecimal()">
+            <input type="button" class="btn btn-outline-secondary btn-lg" value="0" onclick="btNumero(event)">
+            <input type="button" class="btn btn-outline-secondary m-1 btn-lg" value="." onclick="setDecimal(event)">
             <input type="button" class="btn btn-danger btn-lg" value="C" onclick="clearDisplay()">
-            <input type="button" class="btn btn-secondary btn-lg" value="=" onclick="igual()">
+            <input type="button" class="btn btn-secondary btn-lg" value="*" onclick="btOperacao(event)">
         </div>
+        <input type="button" class="btn btn-secondary btn-lg" value="=" onclick="igual()" style="width: 100%">
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         
     </div>
