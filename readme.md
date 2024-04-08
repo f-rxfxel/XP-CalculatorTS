@@ -26,14 +26,6 @@ Para realizar cálculos básicos com o aplicativo de calculadora, siga estas eta
     Limpe a Entrada (Opcional): Se desejar, use o botão de limpar (C ou CE) para limpar a entrada e iniciar um novo cálculo.
 
 
-4. Funcionalidades Avançadas
-Além das operações básicas, o aplicativo de calculadora oferece funcionalidades avançadas, incluindo:
-
-    Porcentagem: Para calcular a porcentagem de um número, insira o número, pressione o botão de porcentagem (%) e depois o botão de igual (=).
-    Raiz Quadrada: Para calcular a raiz quadrada de um número, insira o número e pressione o botão de raiz quadrada (√).
-    Potência: Para calcular uma potência, insira a base, pressione o botão de potência (^), insira o expoente e pressione o botão de igual (=).
-
-
 5. Considerações Finais
 O aplicativo de calculadora é uma ferramenta poderosa para realizar uma variedade de cálculos matemáticos. Explore suas funcionalidades e aproveite sua facilidade de uso para realizar cálculos com eficiência.
 
