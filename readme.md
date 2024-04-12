@@ -1,4 +1,4 @@
-Documentação do Usuário: Aplicativo de Calculadora
+Manual do Usuário: Aplicativo de Calculadora
 
 1. Visão Geral do Aplicativo
 O aplicativo de calculadora é uma ferramenta simples e eficaz para realizar uma variedade de cálculos matemáticos. Ele oferece funcionalidades básicas, como adição, subtração, multiplicação e divisão, bem como funções avançadas, incluindo porcentagem, raiz quadrada e potência.
