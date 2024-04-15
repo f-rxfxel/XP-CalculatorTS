@@ -1,11 +1,12 @@
-let calculo = ""
-let ans = "";
+let calculo = '';
+let ans = '';
 let interrupcao = false;
 
-function atualizaDisplay(texto: string){
-  const displayRef:any = document.getElementById("display");
+function atualizaDisplay(texto: string) {
+  const displayRef: any = document.getElementById('display');
   displayRef.value = texto;
 }
+
 function calcularExpressao(expressao: string) {
   // Remove espaços em branco da expressão
   expressao = expressao.replace(/\s+/g, '');
@@ -14,7 +15,6 @@ function calcularExpressao(expressao: string) {
   const pilha: any[] = [];
   let num = '';
 
-  
   // Percorre a expressão caractere por caractere
   for (let i = 0; i < expressao.length; i++) {
     const char = expressao[i];
@@ -40,10 +40,10 @@ function calcularExpressao(expressao: string) {
 
         // Encontra a subexpressão dentro dos parênteses
         while (parentesesBalanceados > 0 && i < expressao.length) {
-            if (expressao[i] === '(') parentesesBalanceados++;
-            if (expressao[i] === ')') parentesesBalanceados--;
-            if (parentesesBalanceados > 0) subExpressao += expressao[i];
-            i++;
+          if (expressao[i] === '(') parentesesBalanceados++;
+          if (expressao[i] === ')') parentesesBalanceados--;
+          if (parentesesBalanceados > 0) subExpressao += expressao[i];
+          i++;
         }
 
         // Avalia a subexpressão dentro dos parênteses e adiciona à pilha
@@ -65,11 +65,11 @@ function calcularExpressao(expressao: string) {
         pilha.splice(i - 1, 3, resultado);
         i -= 2;
       } else if (pilha[i] === '/') {
-        const resultado: (string | number) = divisao(pilha[i - 1], pilha[i + 1]);
-        if(typeof(resultado) == "string"){
-          console.log(resultado)
+        const resultado: string | number = divisao(pilha[i - 1], pilha[i + 1]);
+        if (typeof resultado == 'string') {
+          console.log(resultado);
           interrupcao = true;
-          throw new Error("Divisão por 0");
+          throw new Error('Divisão por 0');
         }
         pilha.splice(i - 1, 3, resultado);
         i -= 2;
@@ -81,53 +81,59 @@ function calcularExpressao(expressao: string) {
       const operador = pilha[i];
       const proximoNumero = pilha[i + 1];
       if (operador === '+') {
-          resultadoFinal += proximoNumero;
+        resultadoFinal += proximoNumero;
       } else if (operador === '-') {
-          resultadoFinal -= proximoNumero;
+        resultadoFinal -= proximoNumero;
       }
     }
 
     // Retorna o resultado final
     return resultadoFinal;
   } catch (error) {
-    atualizaDisplay(error)
+    atualizaDisplay(error);
   }
 }
-function igualAux(){
-  ans = calcularExpressao(calculo)
-  if(!interrupcao && ans != undefined){
-    calculo = "";
-    atualizaDisplay(ans)
-  }else{
-    ans = "";
-    calculo = "";
+
+function igualAux() {
+  ans = calcularExpressao(calculo);
+  if (!interrupcao && ans != undefined) {
+    calculo = '';
+    atualizaDisplay(ans);
+  } else {
+    ans = '';
+    calculo = '';
     interrupcao = false;
   }
 }
-function usarANS(){
+
+function usarANS() {
   calculo += ans;
-  atualizaDisplay(calculo)
+  atualizaDisplay(calculo);
 }
 
 function divisao(a: any, b: any): number | string {
   if (b === 0) {
-    return "Impossível";
+    return 'Impossível';
   }
   return a / b;
 }
+
 function multiplicao(a: any, b: any): number {
   return a * b;
 }
-function addCaracter({target}){
-  let simbolo = target.value
+
+function addCaracter({ target }) {
+  let simbolo = target.value;
   calculo += simbolo;
-  atualizaDisplay(calculo)
+  atualizaDisplay(calculo);
 }
+
 function clearDisplay(): void {
-  calculo = "";
-  atualizaDisplay(calculo)
+  calculo = '';
+  atualizaDisplay(calculo);
 }
-function deletaCaracter(){
-  calculo = calculo.substring(0, calculo.length - 1)
-  atualizaDisplay(calculo)
+
+function deletaCaracter() {
+  calculo = calculo.substring(0, calculo.length - 1);
+  atualizaDisplay(calculo);
 }
